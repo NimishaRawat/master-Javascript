@@ -16,6 +16,23 @@ const myObj = {
     }
 };
 
+myObj.love = function(){
+    console.log("Love is in the hair!");
+}
+
+myObj.lover = function(){
+    console.log(`Love is in the ${myObj.Surname}!`)
+}
+
+console.log(myObj.love());
+
+console.log(myObj.lover());
+
+
+
+
+/** 
+
 console.log(myObj);
 console.log( myObj.mySym);
 console.log(myObj.abc())
@@ -24,9 +41,9 @@ myObj.Surname = "Vayakti"
 
 console.log(myObj);
 
-/** 
 Object.freeze(myObj);
 
 myObj.ID = "2"
 
 */
+
