@@ -125,10 +125,5 @@ const {courseInstructor : Instructor} = course
 //     "coursename" : "Js in hindi"
 // }
 
-[
-    {},
-    {},
-    {}
-]
 
 
