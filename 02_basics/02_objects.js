@@ -24,9 +24,9 @@ myObj.lover = function(){
     console.log(`Love is in the ${myObj.Surname}!`)
 }
 
-console.log(myObj.love());
+//console.log(myObj.love());
 
-console.log(myObj.lover());
+//console.log(myObj.lover());
 
 
 
@@ -46,4 +46,48 @@ Object.freeze(myObj);
 myObj.ID = "2"
 
 */
+
+
+// singleton
+//Object.create
+
+const mySymbol = Symbol("key1")
+
+//object literals
+const jsUser = {
+    name : "Nimisha",
+    age : 19,
+    location : "Mumbai",
+    email : "blush@shantipriya.com",
+    "Permanent Address" : "un known",
+    [mySymbol] : "myKey1"
+}
+// key , value
+// key is processed as string dispite on the datatype you have used
+
+// console.log(jsUser.email);
+// console.log(jsUser["email"]);
+// console.log(jsUser["Permanent Address"]);
+// console.log(jsUser[mySymbol]);
+
+jsUser.email = "abc@xyz.com"
+//Object.freeze(jsUser)
+
+jsUser.email = "demo@sample.com"
+//console.log(jsUser)
+
+jsUser.greeting = function(){
+    console.log("Hello JS user");
+    
+}
+
+jsUser.greetingTwo = function(){
+    console.log(`Hello JS user, ${this.name}`);
+    
+}
+
+console.log(jsUser.greeting())
+
+console.log(jsUser.greetingTwo());
+
 

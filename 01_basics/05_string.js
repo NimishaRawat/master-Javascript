@@ -31,6 +31,12 @@ console.log(name.slice(0,5));
 console.log(name.substring(0,3));
 
 
+let company = "I work at Accenture   "
 
+console.log(company.trim());
+
+console.log(company.replace("Accenture", "PayTm"));
+
+console.log(company.search("work"));
 
 
