@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- 
+Value	State	               Description
+  0	    UNSENT	               Client has been created. open() not called yet.
+  1	    OPENED	               open() has been called.
+  2	    HEADERS_RECEIVED	   send() has been called, and headers and status are available.
+  3	    LOADING	               Downloading; responseText holds partial data.
+  4	    DONE	               The operation is complete. 
+-->
+
+</head>
+
+<body style="background-color: #212121; color: #fff">
+  <button style=" font-weight: bold; margin: 10px; padding: 10px; border: 2px sloid white; color: orange;" id="info">
+    Get info
+  </button>
+</body>
+
+<script>
+
+  const reqURL = 'https://api.github.com/users/nimisharawat';
+  const superman = new XMLHttpRequest();
+  const info = document.getElementById('info');
+  const div = document.createElement('div');
+  const p = document.createElement('p')
+  const body = document.querySelector('body');
+
+  info.addEventListener('click', function () {
+    superman.open('GET', reqURL);
+    superman.send()
+    superman.onreadystatechange = function () {
+      if (superman.readyState === 4) {
+        const data = JSON.parse(this.responseText);//we usualy get string as result 
+        // so we have to convert it to json object so that we can retrieve data from result
+        const name = data.name;
+        const followers = data.followers;
+        const avatar_url = data.avatar_url;
+        div.innerHTML = `
+        <style>
+          table {
+            border-collapse: collapse;
+            width: 100%;
+            color: white; /* Make text visible on dark bg */
+          }
+          table, th, td {
+            border: 2px solid white; /* White borders for visibility */
+          }
+          th, td {
+            padding: 8px;
+            text-align: left;
+          }
+        </style>
+        <table>
+            <tr>
+              <th>Name </th>
+              <th>followers</th>
+              <th>Avatar</th>
+            </tr>
+            <tr>
+              <th>${name}</th>
+              <th>${followers}</th>
+              <th><img src="${avatar_url}" alt="avatar" width="80" height="80"></th>
+            </tr>
+          </table>`;
+        body.appendChild(div)
+      }
+    }
+  })
+</script>
+
+</html>
