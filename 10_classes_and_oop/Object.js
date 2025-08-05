@@ -31,6 +31,12 @@ chai.printMe()
 
 tea.increment()
 
+console.log(tea.score);
+
 /**
+ * Here's what happens behind the scenes when the new keyword
+ * is used:
+ * A new object is created: The new keyword initiates the
+ * creation of a new Javascript object.
  * 
  */
