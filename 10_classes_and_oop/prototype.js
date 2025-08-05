@@ -46,11 +46,12 @@ String.prototype.trueLength = function(){
     console.log(`${this}`);
     console.log(`${this.name}`);
     console.log(`True length is: ${this.trim().length}`);
-    
 }
 anotherUsername.trueLength()
 
 'Nimisha'.trueLength()
 'iceTea   '.trueLength()
+
+
 
 
