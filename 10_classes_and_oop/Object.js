@@ -38,5 +38,7 @@ console.log(tea.score);
  * is used:
  * A new object is created: The new keyword initiates the
  * creation of a new Javascript object.
+ * A prototype is linked: The newly created object gets linked to the prototype property of 
+ * the constructor functio. this means that it has access to properties and methods defined on the constructor's prototype.
  * 
  */
